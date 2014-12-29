@@ -1,0 +1,508 @@
+Enter file contents hereJAVA Basics
+
+Variables.
+JAVA PRIMITIVES:
+----------------
+variables and function return-types can be any Java Primitive type
+- int		32 bits		signed integers -2,147,483,648 to +2,147,438,647 (-2^31 to +2^31 - 1)
+- long		64 bits		signed integers -2^63 to +2^63 - 1
+- char		16 bits		unicode char set
+- short		16 bits		signed integers -32,768 to +31767 (-2^15 to +2^15 - 1)
+- byte		 8 bits 	signed integers -128 to +127      (-2^7  to  +2^7 - 1)
+- float		32 bytes	signed floating point numbers
+- double	64 bits		signed floating point numbers
+- boolean	true or false values
+- void (used in methods to indicate no return-type)
+
+other non-primitve JAVA data types:
+- array
+- Class (object)
+- Point (pointers)
+
+to declare a constant:
+final string  RED_LIGHT      = 'stop';
+final int     INCH_FOOT      = 12;
+final float   TEMP_C_TO_F    = 1.8;
+final Boolean RETURN_SUCCESS = true;
+
+Literals:
+#### Numeric Literals ####
+To make a numeric value a numeric-literal;
+long pennyTotal = 0;          // (example) declare a variable type=long
+pennytotal = pennyTotal + 4L; // (example) 4 is a Literal of type=long
+
+Binary Values (Base 2): 
+   0b111     = 111[base-2]     =  7[base-10]
+   0b1010101 = 1010101[base-2] = 85[base-10]
+Octal Values (Base 8)
+   0o10      = 10[base-8]      =  8[base-10]
+   0o125     = 125[base-8]     = 85[base-10]
+Hexadecimal Values (Base 16)
+   0x1F      = 1F[base-16]     = 31[base-10]
+   0xA8      = A8[base-16]     = 168[base-10]
+
+#### Character Literals ####
+Character escape-codes are one set of examples. All Escape-code are preceded by '\' (backslash);
+\n	New Line  char(13)+char(10)
+\t	Tab       char(9)
+\b	Backspace
+\r	Return    char(13)
+\f	Formfeed
+\\	Backslash
+\'	Single Quote-mark char(39)
+\"	Double Quote-mark char(34)
+\d	octal (must be an underlined 'd')
+\xd	hexadecimal (must be an underlined 'd')       also: \x21 = 21[base-16] = 33[base-10]
+\ud	Unicode character (must be an underlined 'd') also: \u2122 = 2122[unicode] = TM (trademark symbol)
+
+for  number-strings;
+int 1_234_567 = 1,234,577 = 1234567 (numeric)
+
+Exponents (Doubles, Floats):
+  double var1 = 12e22;		// 12 * 10^22
+  double var2 = 11.9e22;	// 11.9 * 10^22
+  double var3 = 12e-45;		// 12 * 10^-45 (12 / 10^45)
+
+
+Values must be assigned to local variables before tehy're used, or a java class|program won't compile successfully.
+variable	'default
+type		 value'
+--------	---------
+numeric		0
+character	'\0'
+strings		''
+Boolean		false
+Objects		null
+Variable name convention: first letter is lowercase
+Constant name convention: All letters are uppercase
+Java names, classes, variables, etc. are case-sensitive.
+
+JAVA Operators
+==============
+JAVA Operator precedence:
+--------------------------
+(BASIC)
+++ --	 Increment, Decrement 
++ - * /	 Arithmetic (add, subtract, multiply, divide)
+== != > <
+<= >= <> Comparison (equal, not-equal, less-then, greater-than, etc.)
+&  |  ^	 Logical Bitwise (and, or, xor)
+&& ||    Logical AND, OR
+=	 Assignment expressions
+
+(FULL JAVA operator Precedence listing)
+---------------------------------------
+.  []  ()		AccessMethod(dot-operator), Array-Brackets, Parentheses
+++  --  !  ~ instanceof	[not] instanceof returns TRUE or FALSE (object [not] ~instanceof(ClassName))
+			increment, decrement
+new (type)expression	new instance creation, Parentheses used to Cast values to another type
+*  /  %			Multiplication, Division, Modulus (remainder)
++  -			Addition, Subtraction
+<<  >>  >>>		Bitwise left or right shift
+<>  >=  <=		Relational comparison tests
+==  !=			Equality comparison tests
+&			AND/bitwise
+^			XOR/bitwase
+|			OR/bitwise
+&&			AND/logical
+||			OR/Logical
+? :			Ternary Operator. return = (BooleanExpression ? TrueResp : FalseResp);
+%=  +=  .=  -=  /=  ^=	(shorthand) Assignment Operators )(also plain old = assignemnts)
+&= !=  <<=  >>=  >>>=	(other)  Assignment Operators
+
+Bitwise operator meanings:
+>>	Shift right with sign extension
+<<	Shift left with zero fill
+>>>	Shift right with zero fill
+
+16 >> 2 yields 4
+16      = 0001 0000
+shift 2 = 0000 0100, which = 4
+
+128 >> 2 yields 224
+128     = 1000 0000
+shift 2 = 1110 0000, which  = 224
+>> fills the leftmost bit with its previous value
+
+128 >>>  2 yields 32
+128     = 1000 0000
+shift 2 = 0010 0000, which = 32 
+>>> fills the leftmost bit with 0
+
+x = x << 2 is equivalent to x <<= 2
+
+-------------------------------------------------------
+String 'math':
+--------------
+System.out.println("Four Score and " + 7 + "years ago"); // OK because println() is overloaded for multiple data types
+
+public void sysPrintLn( String[] args ) {
+	int prtArgs = args.length - 1;
+	for (int i=0; i<args.length; i++) {
+		System.out.print(args[i]);
+		if (i < prtArgs) {System.out.print(' ');}
+		else {System.Out.print('\n');}
+	}
+}
+
+float investment = 14000.00;
+investment *= 1.4;   // increase by 40% year 1
+investment -= 1500;  // lost $1500      year 2
+investment *= 1.12;  // increase by 12% year 3
+OR
+investment = (((investment * 1.4) - 1500) * 1.2); // each year's activity in a new set of paretheses
+
+public void divide_remain( int main, int divisor) {
+	int quotient  = main / divisor;
+	int remainder = main % divisor;
+	System.out.println(main+'/'+divisor+' = '+quotient + '\tremainder = '+remainder);
+}
+
+class Customer {
+	class Order {
+		private String orderID = '';
+		private int orderStatus = 0; // 0=no status, 10=pending, 20=paid, 30=shipped, 40=canceled , other values...
+		private Boolean fileComplaint = false;
+
+		// class code here
+
+
+		public Order cancelOrder(object Order) {
+			// this method returns an Order object
+			if (this.orderID = Order.orderNum) {
+				this.Order.orderStatus = 40;
+			}
+			return this.Order;
+		}
+		public Boolean changeComplaintStatus() {
+			this.fileComplaint = !this.fileComplaint;
+		}
+		public void fileComplaint(object Order) {
+			if (this.fileComplaint == true) {
+			// code
+			}
+		}
+	} 	// end class Order
+}		// end class Customer
+
+Formatting Strings:
+-------------------
+int accountBalance = 5001;                             // input an int value
+System.out.format("Balance: $%,%dn", accountBalance);  // produces '%5,001'
+double pi = Math.PI;                                   // store Math.PI to variable because Math.PI is static, final
+System.out.format("pi = %.11f%n",pi);                  // produces '3.14159265359'
+float gradePtAvg = 3.25F;		// Numeric Literal (F = Floating Point nuber, or float)
+System.out.println("My GPA is " + gpa);
+
+
+CASTING:
+----------------------------
+Class Employee {
+	// Base class
+	// code for this class
+}
+class VicePresident extends Employee {
+	// inherits from Employee{}
+	// code for this class
+}
+Employee      emp  = new Employee();      // emp  is a member of the Employee      class
+VicePresident veep = new VicePresident(); // veep is a member of the VicePresident class
+// because all VicePresidents are Employees
+emp  = veep;               // no type-casting needed for Upward use ('upcasting')
+// But because only some Employees are VicePresidents
+veep = (VicePresident)emp; // Explicit type-casting needed for this ('downcasting')
+
+
+INSTANCES Value and Equality
+-----------------------
+public static void main(String[] args) {
+	String str1, str2;
+	str1 = "We the People";
+	
+	str2 = str1;		 // assignment: str1 and str2 refer to the same object instance
+	System.out.println("Same Object? "+(str1 == str2));	// prints 'true'
+	System.out.println("Same value?  "+str1.equals(str2));	// prints 'true'
+	
+	str2 = new String(str1); // assignment: create a new String object, set value = str1
+	System.out.println("Same Object? "+(str1 == str2));	// prints 'false'
+	System.out.println("Same value?  "+str1.equals(str2));	// prints 'true'
+}
+
+ARRAYS in JAVA:
+===============
+String players = new String[11]; // create an array with 11 strings, name = 'players'
+
+
+/////////////////////////////////////////////////////////////////
+// Object Oriented Programming (simple example):
+// This application will display a 'Hello World!' message on a
+// user's console by creating n instance of the Greeter class,
+// and then calling the Greeter Object's sayHello() method.
+////////////////////////////////////////////////////////////////
+public class HelloApp
+{
+   
+   public static void main(String[] args)
+   {
+       private boolean passArgs;
+       private String  argPassList = '';
+       
+       if (args.length < 1) 
+       {   // just put the 'Hello World!' message out to the Console
+           passArgs = false;
+           ConsoleGreeter myGreeterObject = new ConsoleGreeter();
+       }
+       else if (args.length == 1) 
+       {
+           if (args[0].equalsIgnoreCase("response-window") 
+           {   // just put the 'Hello World!' message out to a RepsonseWindow
+               passArgs    = false;
+               RespWinGreeter myGreeterObject = new RespWinGreeter();
+           }
+           else
+           {
+               passArgs    = true;
+               argPassList = args[0];
+               ConsoleGreeter myGreeterObject = new ConsoleGreeter();
+           }
+       }
+       else // if (args.length >= 1)
+       {
+           passArgs = true;
+           
+           int start;
+           start = (args[0].equalsIgnoreCase("response-window")) ? 1 : 0 ;
+           
+           argPassList = assemblePhrase(args, start)
+           argPassList = argPassList.trim();
+           
+           if (start == 1) 
+           {   // args[0] = 'response-window'
+               RespWinGreeter myGreeterObject = new RespWinGreeter();
+           }
+           else 
+           {
+               ConsoleGreeter myGreeterObject = new ConsoleGreeter();
+           }   // ... if (start == 1)
+       }       // ... if (args.length < 1)
+       
+       if (passArgs == true) 
+       {
+               myGreeterObject.sayHello(argPassList);
+       }
+       else // passArgs = false
+       {
+               myGreeterObject.sayHello();
+       }      // ... if (passArgs == true) 
+   }          // end main()
+   
+   public string assemblePhrase(String strArray, int startArg)
+   {
+       String returnStr = '';
+       for (int i = startArg; i < strArray.length; i++)
+       {
+           returnStr = returnStr + ' ' + strArray[i];
+       }
+       return returnStr;
+   }
+
+// end of class HelloApp
+}
+
+public class ConsoleGreeter
+{
+   public void sayHello()
+   {
+       System.out.println("Hello World!");
+   }
+   public void sayHello(String[] toWhom)
+   {
+       String toYou = HelloApp.assemblePhrase(toWhom,0);
+       System.out.println("Hello" + toYou + "!");
+   }
+// end of class ConsoleGreeter
+}
+
+public class RespWinGreeter
+{
+   public void sayHello()
+   {
+       JOptionPane.showMessageDialog(null, "Hello World!", JOptionPane.INFORMATION_MESAGE);
+   }
+   public void sayHello(String[] toWhom)
+   {
+       String toYou = HelloApp.assemblePhrase(toWhom,0);
+       JOptionPane.showMessageDialog(null, "Hello" + toYou + "!", JOptionPane.INFORMATION_MESAGE);
+   }
+// end of class RespWinGreeter
+}
+
+JAVA INNER CLASS
+Inner Classes (example):
+-------------------------
+Class OuterClassName
+{
+    public static void main(string[] args)
+    {
+       // main() method code 
+    }
+    
+    private class InnerClassName
+    {
+       // code defining the body of the inner class
+       // inner classes can have private, public, or protected visibility
+       // inner classes carry a reference to the outerClass
+       // inner-classes have access to all fields, methods, and instance-variables of their outer-class
+       // because of the outer-class reference, you can create or refer to inner-classes from outer-class static methods -- e.g. main() -- 
+       // BUT you can create a static inner-class
+    }
+}
+
+ANONYMOUS CLASS
+Anonymous Classes (example):
+------------------------------
+public class AnonymousClassBall
+{
+   public static void main(string[] args) 
+   {
+       Ball b = new Ball()
+       {
+           public void hitBall()
+           {
+               System.out.println("You hit the Ball!");
+           }
+       }; // note - this ends the new Ball() statement
+       b.hitBall();
+   }
+   
+   interface Ball // interface for AnonymousClassBall
+   {
+       void hitBall();
+   }
+}
+
+To delcare and instantiate the AnonymousClassBall class;
+new AnonymousClassball() { class-body } // call the Anonymous class directly
+OR
+new Ball() { class-body } // call the interface that implements the Anynymous class
+
+
+Lambda Expressions:
+---------------------
+A lambda expression allows creation of an anonymous class instance that implements a functional interface.
+The hitBall() method, in the AnonymousClassBall{} class, meets that definition.
+A functional interface must contain one abstract method, and may contain other concrete methods.
+
+Lambda functions are a quick way to create anonymous classes that implement functional interfaces. Instead of defining a formal method declaration which includes a return-type, method-name, parameter-types, and method-body-code, you just define teh parameter types and method-body-commands. The Java compiler infers the rest, based on the context of the Lambda expression.
+Example:
+() -> { System.out.println("You hit the ball!");} // this Lambda-Expression implements the interface whose abstract method takes no parameters.
+"->" = 'Arrow Operator'
+
+For the anonymous class above, the coding would look like  this:
+
+public class LambdaBall
+{
+   public static void main(string[] args) 
+   {
+       Ball b = () -> {System.out.println("You hit the Ball!");}; // notice 2 semicolons: 1=end of embedded lambda-command,2=end of main() command
+       b.hitBall();
+   }
+   
+   interface Ball // interface for LambdaBall
+   {
+       void hitBall();
+   }
+}
+
+
+STATIC FIELDS & METHODS:
+------------------------
+Static fields and methods are asociated with an entire Class, not a specific Object which is an instance of the Class. 
+It's not necessary to crate an 'instance of the class' (object) in order to access a Static Variable or Static Method.
+
+Uses/reasons for Static fields and methods:
+1. To provide constants or other values that aren't tied to a spacific class instance (example: a tax rate applicable to all taxable items)
+2. To keep a count of how many instances of a class have been created or are active
+3. To maintain a reference value (e.g. invoice numbers, or serial numbers which are incremented or generated according a set of rules).
+4. To provide alternative ways to crete class instances. Example: Java NumberFormat class has getCurrencyInstance() and getNumberInstance that return Object instances to format numeric values in specific ways.
+   Note: the NumberFormat example also describes a 'Singleton Class' and Singleton Pattern.
+5. To provide a set of utility functions to a Class that aren't associated with a specific object. Examples include many types of data validation.
+
+Static variables or fields can be declared  private outside of any class methods. BUT...
+... Because static variables and methods are available to an entire class (all instances or objects of the Class Type), static variables can't be declared in private methods.
+
+SINGLETON PATTERN
+-----------------
+A singleton is a class where only ONE instance is created.  
+Creating a private constructor will prevent the class from being instantiated externally.
+Creating a public method that controls instantiation allows one and only one instance of the class to be created.
+
+public class SingletonClass 
+{
+   private static SingletonClass instance;   // delcare a Field for an instance reference
+   // this variable maintains a reference to an object (instance of the Class)
+
+   private SingletonClass() {}               // default constructor for instance reference
+   // declaring this private will pevent the constructor from being used or called from
+   // outside the Class, and thus prevent new instances from being instantiated if one already exists
+   
+   public static SingletonClass getInstance()
+   {                                         // static function -- same method used by all class instances
+       if (instance == null) {               // if there is no instance
+            instance = new SingletonClass(); // then create one [set the private static Field, above]
+       }
+       return instance;                      // return a reference to the instance
+   }
+}
+
+//////////////////////////////////////////
+// commands to run the Singleton Class: //
+//////////////////////////////////////////
+SingletonClass obj1 = SingletonClass.getInstance();
+SingletonClass obj2 = SingletonClass.getInstance();
+if (obj1 == obj2) {
+    System.out.println("The objects are the same.");
+}
+else {
+    System.out.println("The objects are not the same.");
+}
+
+Actual code snippet from the Java Math Class:
+=============================================
+public final class Math {
+   
+   /** 
+    * Don't allow anyone to instantiate this class
+    */
+   private Math() {}
+   ...
+   ... much more code
+   ...
+}
+
+EMBEDDED JAVA:
+http://www.onjava.com/pub/st/54
+
+Tutorial:
+http://www.oracle.com/technetwork/java/index.html
+http://www.onjava.com/pub/a/onjava/synd/2001/08/15/embedded.html
+SECURITY:
+http://www.pcworld.com/article/2030778/researchers-javas-security-problems-unlikely-to-be-resolved-soon.html
+
+JVM
+====
+JVM (Java Virtual Machine) is an abstract machine. It is a specification that provides runtime environment in which java bytecode can be executed.  
+JVMs are available for many hardware and software platforms. JVM, JRE and JDK are platform dependent because configuration of each OS differs. But, Java is platform independent. 
+The JVM performs following main tasks: •Loads code
+•Verifies code
+•Executes code
+•Provides runtime environment
+ 
+JRE
+====
+JRE is an acronym for Java Runtime Environment.It is used to provide runtime environment.It is the implementation of JVM.It physically exists.It contains set of libraries + other files that JVM uses at runtime.  
+Implementation of JVMs are also actively released by other companies besides Sun Micro Systems.  
+
+JDK
+====
+JDK is an acronym for Java Development Kit.It physically exists.It contains JRE + development tools.  
