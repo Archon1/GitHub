@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Github : https://github.com/Archon1/Java-JavaScript-JQuery-Cheat-Sheet-Notes.git">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Github</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/Archon1/GitHub">View on GitHub</a>
+
+          <h1 id="project_title">Github</h1>
+          <h2 id="project_tagline">https://github.com/Archon1/Java-JavaScript-JQuery-Cheat-Sheet-Notes.git</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/Archon1/GitHub/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/Archon1/GitHub/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <p>JAVA Basics</p>
+
+<p>Variables.</p>
+
+<h2>
+<a id="java-primitives" class="anchor" href="#java-primitives" aria-hidden="true"><span class="octicon octicon-link"></span></a>JAVA PRIMITIVES:</h2>
+
+<p>variables and function return-types can be any Java Primitive type</p>
+
+<ul>
+<li>int       32 bits     signed integers -2,147,483,648 to +2,147,438,647 (-2^31 to +2^31 - 1)</li>
+<li>long      64 bits     signed integers -2^63 to +2^63 - 1</li>
+<li>char      16 bits     unicode char set</li>
+<li>short     16 bits     signed integers -32,768 to +31767 (-2^15 to +2^15 - 1)</li>
+<li>byte       8 bits     signed integers -128 to +127      (-2^7  to  +2^7 - 1)</li>
+<li>float     32 bytes    signed floating point numbers</li>
+<li>double    64 bits     signed floating point numbers</li>
+<li>boolean   true or false values</li>
+<li>void (used in methods to indicate no return-type)</li>
+</ul>
+
+<p>other non-primitve JAVA data types:</p>
+
+<ul>
+<li>array</li>
+<li>Class (object)</li>
+<li>Point (pointers)</li>
+</ul>
+
+<p>to declare a constant:
+final string  RED_LIGHT      = 'stop';
+final int     INCH_FOOT      = 12;
+final float   TEMP_C_TO_F    = 1.8;
+final Boolean RETURN_SUCCESS = true;</p>
+
+<p>Literals:</p>
+
+<h4>
+<a id="numeric-literals" class="anchor" href="#numeric-literals" aria-hidden="true"><span class="octicon octicon-link"></span></a>Numeric Literals</h4>
+
+<p>To make a numeric value a numeric-literal;
+long pennyTotal = 0;          // (example) declare a variable type=long
+pennytotal = pennyTotal + 4L; // (example) 4 is a Literal of type=long</p>
+
+<p>Binary Values (Base 2): 
+   0b111     = 111[base-2]     =  7[base-10]
+   0b1010101 = 1010101[base-2] = 85[base-10]
+Octal Values (Base 8)
+   0o10      = 10[base-8]      =  8[base-10]
+   0o125     = 125[base-8]     = 85[base-10]
+Hexadecimal Values (Base 16)
+   0x1F      = 1F[base-16]     = 31[base-10]
+   0xA8      = A8[base-16]     = 168[base-10]</p>
+
+<h4>
+<a id="character-literals" class="anchor" href="#character-literals" aria-hidden="true"><span class="octicon octicon-link"></span></a>Character Literals</h4>
+
+<p>Character escape-codes are one set of examples. All Escape-code are preceded by '\' (backslash);
+\n  New Line  char(13)+char(10)
+\t  Tab       char(9)
+\b  Backspace
+\r  Return    char(13)
+\f  Formfeed
+\  Backslash
+\'  Single Quote-mark char(39)
+\"  Double Quote-mark char(34)
+\d  octal (must be an underlined 'd')
+\xd hexadecimal (must be an underlined 'd')       also: \x21 = 21[base-16] = 33[base-10]
+\ud Unicode character (must be an underlined 'd') also: \u2122 = 2122[unicode] = TM (trademark symbol)</p>
+
+<p>for  number-strings;
+int 1_234_567 = 1,234,577 = 1234567 (numeric)</p>
+
+<p>Exponents (Doubles, Floats):
+  double var1 = 12e22;      // 12 * 10^22
+  double var2 = 11.9e22;    // 11.9 * 10^22
+  double var3 = 12e-45;     // 12 * 10^-45 (12 / 10^45)</p>
+
+<p>Values must be assigned to local variables before tehy're used, or a java class|program won't compile successfully.
+variable    'default
+type         value'</p>
+
+<hr>
+
+<p>numeric     0
+character   '\0'
+strings     ''
+Boolean     false
+Objects     null
+Variable name convention: first letter is lowercase
+Constant name convention: All letters are uppercase
+Java names, classes, variables, etc. are case-sensitive.</p>
+
+<h1>
+<a id="java-operators" class="anchor" href="#java-operators" aria-hidden="true"><span class="octicon octicon-link"></span></a>JAVA Operators</h1>
+
+<h2>
+<a id="java-operator-precedence" class="anchor" href="#java-operator-precedence" aria-hidden="true"><span class="octicon octicon-link"></span></a>JAVA Operator precedence:</h2>
+
+<p>(BASIC)
+++ --    Increment, Decrement </p>
+
+<ul>
+<li>- * /  Arithmetic (add, subtract, multiply, divide)
+== != &gt; &lt;
+&lt;= &gt;= &lt;&gt; Comparison (equal, not-equal, less-then, greater-than, etc.)
+&amp;  |  ^  Logical Bitwise (and, or, xor)
+&amp;&amp; ||    Logical AND, OR
+=    Assignment expressions</li>
+</ul>
+
+<h2>
+<a id="full-java-operator-precedence-listing" class="anchor" href="#full-java-operator-precedence-listing" aria-hidden="true"><span class="octicon octicon-link"></span></a>(FULL JAVA operator Precedence listing)</h2>
+
+<p>.  <a href=""></a>       AccessMethod(dot-operator), Array-Brackets, Parentheses
+++  --  !  ~ instanceof [not] instanceof returns TRUE or FALSE (object [not] ~instanceof(ClassName))
+            increment, decrement
+new (type)expression    new instance creation, Parentheses used to Cast values to another type</p>
+
+<ul>
+<li> /  %         Multiplication, Division, Modulus (remainder)</li>
+<li> -            Addition, Subtraction
+&lt;&lt;  &gt;&gt;  &gt;&gt;&gt;     Bitwise left or right shift
+&lt;&gt;  &gt;=  &lt;=      Relational comparison tests
+==  !=          Equality comparison tests
+&amp;           AND/bitwise
+^           XOR/bitwase
+|           OR/bitwise
+&amp;&amp;          AND/logical
+||          OR/Logical
+? :         Ternary Operator. return = (BooleanExpression ? TrueResp : FalseResp);
+%=  +=  .=  -=  /=  ^=  (shorthand) Assignment Operators )(also plain old = assignemnts)
+&amp;= !=  &lt;&lt;=  &gt;&gt;=  &gt;&gt;&gt;=   (other)  Assignment Operators</li>
+</ul>
+
+<p>Bitwise operator meanings:</p>
+
+<blockquote>
+<blockquote>
+<p>Shift right with sign extension
+&lt;&lt;  Shift left with zero fill</p>
+
+<blockquote>
+<p>Shift right with zero fill</p>
+</blockquote>
+</blockquote>
+</blockquote>
+
+<p>16 &gt;&gt; 2 yields 4
+16      = 0001 0000
+shift 2 = 0000 0100, which = 4</p>
+
+<p>128 &gt;&gt; 2 yields 224
+128     = 1000 0000
+shift 2 = 1110 0000, which  = 224</p>
+
+<blockquote>
+<blockquote>
+<p>fills the leftmost bit with its previous value</p>
+</blockquote>
+</blockquote>
+
+<p>128 &gt;&gt;&gt;  2 yields 32
+128     = 1000 0000
+shift 2 = 0010 0000, which = 32 </p>
+
+<blockquote>
+<blockquote>
+<blockquote>
+<p>fills the leftmost bit with 0</p>
+</blockquote>
+</blockquote>
+</blockquote>
+
+<p>x = x &lt;&lt; 2 is equivalent to x &lt;&lt;= 2</p>
+
+<hr>
+
+<h2>
+<a id="string-math" class="anchor" href="#string-math" aria-hidden="true"><span class="octicon octicon-link"></span></a>String 'math':</h2>
+
+<p>System.out.println("Four Score and " + 7 + "years ago"); // OK because println() is overloaded for multiple data types</p>
+
+<p>public void sysPrintLn( String[] args ) {
+    int prtArgs = args.length - 1;
+    for (int i=0; i&lt;args.length; i++) {
+        System.out.print(args[i]);
+        if (i &lt; prtArgs) {System.out.print(' ');}
+        else {System.Out.print('\n');}
+    }
+}</p>
+
+<p>float investment = 14000.00;
+investment *= 1.4;   // increase by 40% year 1
+investment -= 1500;  // lost $1500      year 2
+investment *= 1.12;  // increase by 12% year 3
+OR
+investment = (((investment * 1.4) - 1500) * 1.2); // each year's activity in a new set of paretheses</p>
+
+<p>public void divide_remain( int main, int divisor) {
+    int quotient  = main / divisor;
+    int remainder = main % divisor;
+    System.out.println(main+'/'+divisor+' = '+quotient + '\tremainder = '+remainder);
+}</p>
+
+<p>class Customer {
+    class Order {
+        private String orderID = '';
+        private int orderStatus = 0; // 0=no status, 10=pending, 20=paid, 30=shipped, 40=canceled , other values...
+        private Boolean fileComplaint = false;</p>
+
+<pre><code>    // class code here
+
+
+    public Order cancelOrder(object Order) {
+        // this method returns an Order object
+        if (this.orderID = Order.orderNum) {
+            this.Order.orderStatus = 40;
+        }
+        return this.Order;
+    }
+    public Boolean changeComplaintStatus() {
+        this.fileComplaint = !this.fileComplaint;
+    }
+    public void fileComplaint(object Order) {
+        if (this.fileComplaint == true) {
+        // code
+        }
+    }
+}   // end class Order
+</code></pre>
+
+<p>}       // end class Customer</p>
+
+<h2>
+<a id="formatting-strings" class="anchor" href="#formatting-strings" aria-hidden="true"><span class="octicon octicon-link"></span></a>Formatting Strings:</h2>
+
+<p>int accountBalance = 5001;                             // input an int value
+System.out.format("Balance: $%,%dn", accountBalance);  // produces '%5,001'
+double pi = Math.PI;                                   // store Math.PI to variable because Math.PI is static, final
+System.out.format("pi = %.11f%n",pi);                  // produces '3.14159265359'
+float gradePtAvg = 3.25F;       // Numeric Literal (F = Floating Point nuber, or float)
+System.out.println("My GPA is " + gpa);</p>
+
+<h2>
+<a id="casting" class="anchor" href="#casting" aria-hidden="true"><span class="octicon octicon-link"></span></a>CASTING:</h2>
+
+<p>Class Employee {
+    // Base class
+    // code for this class
+}
+class VicePresident extends Employee {
+    // inherits from Employee{}
+    // code for this class
+}
+Employee      emp  = new Employee();      // emp  is a member of the Employee      class
+VicePresident veep = new VicePresident(); // veep is a member of the VicePresident class
+// because all VicePresidents are Employees
+emp  = veep;               // no type-casting needed for Upward use ('upcasting')
+// But because only some Employees are VicePresidents
+veep = (VicePresident)emp; // Explicit type-casting needed for this ('downcasting')</p>
+
+<h2>
+<a id="instances-value-and-equality" class="anchor" href="#instances-value-and-equality" aria-hidden="true"><span class="octicon octicon-link"></span></a>INSTANCES Value and Equality</h2>
+
+<p>public static void main(String[] args) {
+    String str1, str2;
+    str1 = "We the People";</p>
+
+<pre><code>str2 = str1;         // assignment: str1 and str2 refer to the same object instance
+System.out.println("Same Object? "+(str1 == str2)); // prints 'true'
+System.out.println("Same value?  "+str1.equals(str2));  // prints 'true'
+
+str2 = new String(str1); // assignment: create a new String object, set value = str1
+System.out.println("Same Object? "+(str1 == str2)); // prints 'false'
+System.out.println("Same value?  "+str1.equals(str2));  // prints 'true'
+</code></pre>
+
+<p>}</p>
+
+<h1>
+<a id="arrays-in-java" class="anchor" href="#arrays-in-java" aria-hidden="true"><span class="octicon octicon-link"></span></a>ARRAYS in JAVA:</h1>
+
+<p>String players = new String[11]; // create an array with 11 strings, name = 'players'</p>
+
+<p>/////////////////////////////////////////////////////////////////
+// Object Oriented Programming (simple example):
+// This application will display a 'Hello World!' message on a
+// user's console by creating n instance of the Greeter class,
+// and then calling the Greeter Object's sayHello() method.
+////////////////////////////////////////////////////////////////
+public class HelloApp
+{</p>
+
+<p>public static void main(String[] args)
+   {
+       private boolean passArgs;
+       private String  argPassList = '';</p>
+
+<pre><code>   if (args.length &lt; 1) 
+   {   // just put the 'Hello World!' message out to the Console
+       passArgs = false;
+       ConsoleGreeter myGreeterObject = new ConsoleGreeter();
+   }
+   else if (args.length == 1) 
+   {
+       if (args[0].equalsIgnoreCase("response-window") 
+       {   // just put the 'Hello World!' message out to a RepsonseWindow
+           passArgs    = false;
+           RespWinGreeter myGreeterObject = new RespWinGreeter();
+       }
+       else
+       {
+           passArgs    = true;
+           argPassList = args[0];
+           ConsoleGreeter myGreeterObject = new ConsoleGreeter();
+       }
+   }
+   else // if (args.length &gt;= 1)
+   {
+       passArgs = true;
+
+       int start;
+       start = (args[0].equalsIgnoreCase("response-window")) ? 1 : 0 ;
+
+       argPassList = assemblePhrase(args, start)
+       argPassList = argPassList.trim();
+
+       if (start == 1) 
+       {   // args[0] = 'response-window'
+           RespWinGreeter myGreeterObject = new RespWinGreeter();
+       }
+       else 
+       {
+           ConsoleGreeter myGreeterObject = new ConsoleGreeter();
+       }   // ... if (start == 1)
+   }       // ... if (args.length &lt; 1)
+
+   if (passArgs == true) 
+   {
+           myGreeterObject.sayHello(argPassList);
+   }
+   else // passArgs = false
+   {
+           myGreeterObject.sayHello();
+   }      // ... if (passArgs == true) 
+</code></pre>
+
+<p>}          // end main()</p>
+
+<p>public string assemblePhrase(String strArray, int startArg)
+   {
+       String returnStr = '';
+       for (int i = startArg; i &lt; strArray.length; i++)
+       {
+           returnStr = returnStr + ' ' + strArray[i];
+       }
+       return returnStr;
+   }</p>
+
+<p>// end of class HelloApp
+}</p>
+
+<p>public class ConsoleGreeter
+{
+   public void sayHello()
+   {
+       System.out.println("Hello World!");
+   }
+   public void sayHello(String[] toWhom)
+   {
+       String toYou = HelloApp.assemblePhrase(toWhom,0);
+       System.out.println("Hello" + toYou + "!");
+   }
+// end of class ConsoleGreeter
+}</p>
+
+<p>public class RespWinGreeter
+{
+   public void sayHello()
+   {
+       JOptionPane.showMessageDialog(null, "Hello World!", JOptionPane.INFORMATION_MESAGE);
+   }
+   public void sayHello(String[] toWhom)
+   {
+       String toYou = HelloApp.assemblePhrase(toWhom,0);
+       JOptionPane.showMessageDialog(null, "Hello" + toYou + "!", JOptionPane.INFORMATION_MESAGE);
+   }
+// end of class RespWinGreeter
+}</p>
+
+<p>JAVA INNER CLASS</p>
+
+<h2>
+<a id="inner-classes-example" class="anchor" href="#inner-classes-example" aria-hidden="true"><span class="octicon octicon-link"></span></a>Inner Classes (example):</h2>
+
+<p>Class OuterClassName
+{
+    public static void main(string[] args)
+    {
+       // main() method code 
+    }</p>
+
+<pre><code>private class InnerClassName
+{
+   // code defining the body of the inner class
+   // inner classes can have private, public, or protected visibility
+   // inner classes carry a reference to the outerClass
+   // inner-classes have access to all fields, methods, and instance-variables of their outer-class
+   // because of the outer-class reference, you can create or refer to inner-classes from outer-class static methods -- e.g. main() -- 
+   // BUT you can create a static inner-class
+}
+</code></pre>
+
+<p>}</p>
+
+<p>ANONYMOUS CLASS</p>
+
+<h2>
+<a id="anonymous-classes-example" class="anchor" href="#anonymous-classes-example" aria-hidden="true"><span class="octicon octicon-link"></span></a>Anonymous Classes (example):</h2>
+
+<p>public class AnonymousClassBall
+{
+   public static void main(string[] args) 
+   {
+       Ball b = new Ball()
+       {
+           public void hitBall()
+           {
+               System.out.println("You hit the Ball!");
+           }
+       }; // note - this ends the new Ball() statement
+       b.hitBall();
+   }</p>
+
+<p>interface Ball // interface for AnonymousClassBall
+   {
+       void hitBall();
+   }
+}</p>
+
+<p>To delcare and instantiate the AnonymousClassBall class;
+new AnonymousClassball() { class-body } // call the Anonymous class directly
+OR
+new Ball() { class-body } // call the interface that implements the Anynymous class</p>
+
+<h2>
+<a id="lambda-expressions" class="anchor" href="#lambda-expressions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Lambda Expressions:</h2>
+
+<p>A lambda expression allows creation of an anonymous class instance that implements a functional interface.
+The hitBall() method, in the AnonymousClassBall{} class, meets that definition.
+A functional interface must contain one abstract method, and may contain other concrete methods.</p>
+
+<p>Lambda functions are a quick way to create anonymous classes that implement functional interfaces. Instead of defining a formal method declaration which includes a return-type, method-name, parameter-types, and method-body-code, you just define teh parameter types and method-body-commands. The Java compiler infers the rest, based on the context of the Lambda expression.
+Example:
+() -&gt; { System.out.println("You hit the ball!");} // this Lambda-Expression implements the interface whose abstract method takes no parameters.
+"-&gt;" = 'Arrow Operator'</p>
+
+<p>For the anonymous class above, the coding would look like  this:</p>
+
+<p>public class LambdaBall
+{
+   public static void main(string[] args) 
+   {
+       Ball b = () -&gt; {System.out.println("You hit the Ball!");}; // notice 2 semicolons: 1=end of embedded lambda-command,2=end of main() command
+       b.hitBall();
+   }</p>
+
+<p>interface Ball // interface for LambdaBall
+   {
+       void hitBall();
+   }
+}</p>
+
+<h2>
+<a id="static-fields--methods" class="anchor" href="#static-fields--methods" aria-hidden="true"><span class="octicon octicon-link"></span></a>STATIC FIELDS &amp; METHODS:</h2>
+
+<p>Static fields and methods are asociated with an entire Class, not a specific Object which is an instance of the Class. 
+It's not necessary to crate an 'instance of the class' (object) in order to access a Static Variable or Static Method.</p>
+
+<p>Uses/reasons for Static fields and methods:
+1. To provide constants or other values that aren't tied to a spacific class instance (example: a tax rate applicable to all taxable items)
+2. To keep a count of how many instances of a class have been created or are active
+3. To maintain a reference value (e.g. invoice numbers, or serial numbers which are incremented or generated according a set of rules).
+4. To provide alternative ways to crete class instances. Example: Java NumberFormat class has getCurrencyInstance() and getNumberInstance that return Object instances to format numeric values in specific ways.
+   Note: the NumberFormat example also describes a 'Singleton Class' and Singleton Pattern.
+5. To provide a set of utility functions to a Class that aren't associated with a specific object. Examples include many types of data validation.</p>
+
+<p>Static variables or fields can be declared  private outside of any class methods. BUT...
+... Because static variables and methods are available to an entire class (all instances or objects of the Class Type), static variables can't be declared in private methods.</p>
+
+<h2>
+<a id="singleton-pattern" class="anchor" href="#singleton-pattern" aria-hidden="true"><span class="octicon octicon-link"></span></a>SINGLETON PATTERN</h2>
+
+<p>A singleton is a class where only ONE instance is created.<br>
+Creating a private constructor will prevent the class from being instantiated externally.
+Creating a public method that controls instantiation allows one and only one instance of the class to be created.</p>
+
+<p>public class SingletonClass 
+{
+   private static SingletonClass instance;   // delcare a Field for an instance reference
+   // this variable maintains a reference to an object (instance of the Class)</p>
+
+<p>private SingletonClass() {}               // default constructor for instance reference
+   // declaring this private will pevent the constructor from being used or called from
+   // outside the Class, and thus prevent new instances from being instantiated if one already exists</p>
+
+<p>public static SingletonClass getInstance()
+   {                                         // static function -- same method used by all class instances
+       if (instance == null) {               // if there is no instance
+            instance = new SingletonClass(); // then create one [set the private static Field, above]
+       }
+       return instance;                      // return a reference to the instance
+   }
+}</p>
+
+<p>//////////////////////////////////////////
+// commands to run the Singleton Class: //
+//////////////////////////////////////////
+SingletonClass obj1 = SingletonClass.getInstance();
+SingletonClass obj2 = SingletonClass.getInstance();
+if (obj1 == obj2) {
+    System.out.println("The objects are the same.");
+}
+else {
+    System.out.println("The objects are not the same.");
+}</p>
+
+<h1>
+<a id="actual-code-snippet-from-the-java-math-class" class="anchor" href="#actual-code-snippet-from-the-java-math-class" aria-hidden="true"><span class="octicon octicon-link"></span></a>Actual code snippet from the Java Math Class:</h1>
+
+<p>public final class Math {</p>
+
+<p>/** 
+    * Don't allow anyone to instantiate this class
+    */
+   private Math() {}
+   ...
+   ... much more code
+   ...
+}</p>
+
+<p>EMBEDDED JAVA:
+<a href="http://www.onjava.com/pub/st/54">http://www.onjava.com/pub/st/54</a></p>
+
+<p>Tutorial:
+<a href="http://www.oracle.com/technetwork/java/index.html">http://www.oracle.com/technetwork/java/index.html</a>
+<a href="http://www.onjava.com/pub/a/onjava/synd/2001/08/15/embedded.html">http://www.onjava.com/pub/a/onjava/synd/2001/08/15/embedded.html</a>
+SECURITY:
+<a href="http://www.pcworld.com/article/2030778/researchers-javas-security-problems-unlikely-to-be-resolved-soon.html">http://www.pcworld.com/article/2030778/researchers-javas-security-problems-unlikely-to-be-resolved-soon.html</a></p>
+
+<h1>
+<a id="jvm" class="anchor" href="#jvm" aria-hidden="true"><span class="octicon octicon-link"></span></a>JVM</h1>
+
+<p>JVM (Java Virtual Machine) is an abstract machine. It is a specification that provides runtime environment in which java bytecode can be executed.<br>
+JVMs are available for many hardware and software platforms. JVM, JRE and JDK are platform dependent because configuration of each OS differs. But, Java is platform independent. 
+The JVM performs following main tasks: •Loads code
+•Verifies code
+•Executes code
+•Provides runtime environment</p>
+
+<h1>
+<a id="jre" class="anchor" href="#jre" aria-hidden="true"><span class="octicon octicon-link"></span></a>JRE</h1>
+
+<p>JRE is an acronym for Java Runtime Environment.It is used to provide runtime environment.It is the implementation of JVM.It physically exists.It contains set of libraries + other files that JVM uses at runtime.<br>
+Implementation of JVMs are also actively released by other companies besides Sun Micro Systems.  </p>
+
+<h1>
+<a id="jdk" class="anchor" href="#jdk" aria-hidden="true"><span class="octicon octicon-link"></span></a>JDK</h1>
+
+<p>JDK is an acronym for Java Development Kit.It physically exists.It contains JRE + development tools.  </p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Github maintained by <a href="https://github.com/Archon1">Archon1</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
