@@ -1,0 +1,406 @@
+Enter file contents here(some) Java Packages:
+---------------------
+java.applet		Allows  you to build applets
+java.awt		Abstract Window Toolkie - so that Graphical User Interfaces can be constructed in Java
+java.awt.event		Handles events raised by AWT components
+java.beans		Serves as the basis for software components
+java.io			Supports File input + output
+java.lang		provides core java functionality
+java.net		Enables neworking 
+java.util		Provides several utiltity functions used in java
+java.math		Supports mathematic & arithmetic operations
+
+Variables.
+JAVA PRIMITIVES:
+----------------
+variables and function return-types can be any Java Primitive type
+- int		32 bits		signed integers -2,147,483,648 to +2,147,438,647 (-2^31 to +2^31 - 1)
+- long		64 bits		signed integers -2^63 to +2^63 - 1
+- char		16 bits		unicode char set
+- short		16 bits		signed integers -32,768 to +31767 (-2^15 to +2^15 - 1)
+- byte		 8 bits 	signed integers -128 to +127      (-2^7  to  +2^7 - 1)
+- float		32 bytes	signed floating point numbers
+- double	64 bits		signed floating point numbers
+- boolean	true or false values
+- void (used in methods to indicate no return-type)
+
+JAVA WRAPPER CLASSES:
+---------------------
+Boolean class
+=====================
+--- static methods ---
+boolean getBoolean(String s)			returns the boolean value corresonding to s
+Boolean valueOf(String s)			returns a Boolean object encapsulating the String value = s
+
+--- instance methods ---
+boolean thisObj.BooleanValue()			returns the boolean value encapsulated by the current object
+
+Boolean constructors:
+------------------
+Boolean(boolean b)
+Boolean(String s)
+
+
+Integer class
+=====================
+--- static methods ---
+static Integer decode(String s) throws NumberFormatException		returns Integer object containing value = s[base-10]
+static Integer valueOf(String s) throws NumberFormatException		returns Integer object containing value = s[base-10]
+static Integer valueOf(String s, int B) throws NumberFormatException	returns Integer object containing value = s[base-B]
+static int parseInt(String s) throws NumberFormatException		returns int primitive s[base-10]
+static int parseInt(String s, int B) throws NumberFormatException	returns int primitive s[base-B]
+static String toBinaryString(int i)					returns String object containing value = i in Binary [base-2]
+static String toOctalString(int i)					returns String object containing value = i in Octal [base-8]
+static String toHexString(int i)					returns String object containing value = i in Hex [base-16]
+
+--- instance methods ---
+byte  thisObj.byteValue()			returns the byte equivalent of the current object
+short thisObj.shortValue()			returns the short equivalent of the current object
+int   thisObj.intValue()			returns the int equivalent of the current object
+long  thisObj.longValue()			returns the long equivalent of the current object
+double thisObj.doubleValue()			returns the double equivalent of the current object
+float  thisObj.floatValue()			returns the float equivalent of the current object
+String thisObj.toString()			returns the String equivalent of the current object
+boolean thisObj.equals(Object obj)		returns TRUE if the object values are the same
+
+Char class
+=====================
+--- static methods ---
+boolean isDigit(char c)				returns TRUE if c is a digit
+boolean isLetter(char c)			returns TRUE if c is a letter
+boolean isLetterOrDigit(char c)			returns TRUE if c is a letter or digit
+boolean isLowerCase(char c)			returns TRUE if c is a lowercase letter
+boolean isUpperCase(char c)			returns TRUE if c is an uppercase letter
+boolean isWhitespace(char c)			returns TRUE if c is a whitespace-character NOT(letter, digit, puctuation, other-non-blank)
+boolean isSpaceChar(char c)			returns TRUE if c is a plain space
+char toUpperCase(char c)			returns the UpperCase equivalent of c
+char toLowerCase(char c)			returns the lowercase equivalent of c
+
+--- instance methods ---
+Byte thisObj.decode(String s) throws NumberFormatException		returns Byte object containing value = s[base-10]
+Byte thisObj.valueOf(String s) throws NumberFormatException		returns Byte object containing value = s[base-10]
+Byte thisObj.valueOf(String s, int B) throws NumberFormatException	returns Byte object containing value = s[base-B]
+byte thisObj.parseByte(String s) throws NumberFormatException		returns byte primitive s[base-10]
+byte thisObj.parseByte(String s, int B) throws NumberFormatException	returns byte primitive s[base-B]
+String thisObj.toString()						returns the String equivalent of the current object
+byte  thisObj.byteValue()						returns the byte equivalent of the current object
+short thisObj.shortValue()						returns the short equivalent of the current object
+int   thisObj.intValue()						returns the int equivalent of the current object
+long  thisObj.longValue()						returns the long equivalent of the current object
+double thisObj.doubleValue()						returns the double equivalent of the current object
+float  thisObj.floatValue()						returns the float equivalent of the current object
+String thisObj.toString()						returns the String equivalent of the current object
+
+Similar methods exist for the Short, Long, Double and Float  classes.
+
+Short constructors:
+------------------
+Short(short sh)
+Short(String s) throws NumberFormatException
+
+Byte constructors:
+------------------
+Byte(byte b)
+Byte(String s) throws NumberFormatException
+
+
+
+Long class
+=====================
+This class includes two numeric constants (static final variables) MAX_VALUE, MIN_VALUE (the maximum and minimum values that the class can accommpodate)
+MIN_VALUE = -2^31, MAX_VALUE = +2^31 - 1
+Long classe also static define conditions (static final variables) POSITIVE_INFINITY (> MAX_VALUE), NEGATIVE_INFINITY (< MIN_VALUE), and NaN (Not a Number, Boolean)
+The static methods are similar to those for the Integer and Short classes, except that they resolve to either a Long object, or a long primitive 
+e.g.: long parseLong(String s) throws NumberFormatException
+      Long valueOf(String s) throws NumberFormatException
+
+boolean thisObj.isInfinite()				returns TRUE if the value is NEGATIVE_INFINITY or POSITIVE_INFINITY
+boolean thisObj.isNaN(long l)				returns TRUE if the value is not a number (e.g. devision by zero)
+
+Long constructors:
+------------------
+Long(long l)
+Long(String s) throws NumberFormatException
+
+Float class, 
+Double class
+=====================
+similar to the Long class
+Double class has its own static final values for MAX_VALUE and MIN_VALUE 
+Double and Float classes also define static conditions (static final variables) POSITIVE_INFINITY (> MAX_VALUE), NEGATIVE_INFINITY (< MIN_VALUE), and NaN (Not a Number, Boolean)
+
+Float uses floating point (decimal) values, not integers, so the MIN_VALUE and MAX_VALUE constants are differetn:
+System.out.println(Double.MAX_VALUE);	// prints 1.7976931348623157E308
+System.out.println(Double.MIN_VALUE);	// prints 4.9E-324
+
+Double constructors:
+--------------------
+Double(double d)
+Double(String s) throws NumberFormatException
+
+Float constructors:
+-------------------
+Float(float f)
+Float(double d)
+Float(String s) throws NumberFormatException
+
+
+Strings and the StringBuffer class
+==================================
+constructors:
+  StringBuffer()
+  StringBuffer(int size)
+  StringBuffer(String s)
+
+StringBuffer Instance Methods:
+StringBuffer append(boolean b)		Appends the string equivalent of b
+StringBuffer append(char ch)		Appends ch
+StringBuffer append(double d)		Appends the string equivalent of d
+StringBuffer append(float f)		Appends the string equivalent of f
+StringBuffer append(long l)		Appends the string equivalent of l
+StringBuffer append(int i)		Appends the string equivalent of i
+StringBuffer append(Object obj)		Appends the string equivalent of obj
+StringBuffer append(String s)		Appends value of s (or the string equivalent of  s)
+StringBuffer insert(int i, boolean b)	Inserts the string equivalent of b before index i
+StringBuffer insert(int i, char ch)	Inserts ch before index i
+StringBuffer insert(int i, int j) 	Inserts the string equivalent of j before index i
+StringBuffer insert(int i, long l)	Inserts the string equivalent of l before index i
+StringBuffer insert(int i, Object obj)	Inserts the string equivalent of obj before index i
+StringBuffer insert(int i, String s)	Inserts the string equivalent of s before index i
+StringBuffer reverse()			Reverses the order of the Stringbuffer contents
+int capacity()				Returns the current capacity of the String Buffer
+int length()				Returns the number of characters in the String Buffer
+void setLength(int i)			Sets the buffer capacity to i
+void setCharAt(int i, char ch)		Sets the character at index i = ch
+char charAt(int i)			Returns the character at index i
+String toString()			Returns a String object containing the character sequence
+
+
+
+
+INTERFACES:
+===========
+An interface is a set of constants and method declarationss that define the form of a Class (What the class can do), but with no implementations (nothing stating How the class accomplishes its  functions)
+
+Variables declared in an Interface are (implicitly) static, public, and final; meaning, they are constants.
+Functions prototyped in an Interface are (implcitly) Public and Abstract; they have no implementation
+
+The default Modifier for an interface provides access to code in the same Package [package-level]
+A 'Public' Modifier for an interface allows for access outside the Package (access from other Packages)
+
+A class can implement many interfaces -- but can only extend (inherit-from) one other class.
+
+Interfaces can extend other interfaces.
+
+/* 
+ * instanceof operator - 
+ * can be used to test whether or not an object implements a particular Interface 
+ * can be used to test whether or not an object is an instance of a particular Class
+ */
+interface Vehicle { void Drive(); }
+
+abstract class Mammal {}
+class Bear extends Mammal {}	// doesn't implement Vehicle
+class Impala extends Mammal implements Vehicle {
+   // implements Vehicle, so Vehicle methods must be implemented
+   public void Drive() { System.out.println("Impala: Drive()";}
+}
+class Mustang extends Mammal implements Vehicle {
+   // implements Vehicle, so Vehicle methods must be implemented
+   public void Drive() { System.out.println("Mustang: Drive()";}
+}
+class Lion extends Mammal {}	// doesn't implement Vehicle
+
+class InstanceOfInterface {
+   public static final NUM_OF_MAMMALS = 4;
+   
+   public static void main(String[] args) {
+	// create an Array of Mammals:
+	Mammal mammals = new Mammal[NUM_OF_MAMMALS];
+	// create objects:
+	mammals[0] = new Bear();
+	mammals[1] = new Impala();
+	mammals[2] = new Mustang();
+	mammals[3] = new Lion();
+	// use instanceof operator:
+	for (int i=0; i<NUM_OF_MAMMMALS; i++) {
+	    if (mammals[i] instanceof Vehicles) {
+		Vehicle v = (Vehicle)mammals[i];
+		v.Drive();
+	    }
+	}
+    }
+}
+output:
+Impala: drive()
+Mustang: Drive()
+----------------------------------------
+
+if (objectName instanceof ClassName) { 
+   // [objectName is an instance of ClassName]
+   // commands 
+}
+
+Abstract Classes v. Interfaces:
+-------------------------------
+They are Similar, but an Abstract Class is inherited, an Interface is implemented.
+Java interface are invoked using the keyword ''implements''; A Java abstract class is extended (inherited) using keyword ''extends''.
+
+A Class is abstract if any of its methods is declared as Abstract
+A class extending an Abstract Class must implement ALL of the abstract methods of the parent class, or must be itself an Abstract class.
+An abstract class can have 'concrete' methods (instance methods that implement 'default' behavior)
+Interface methods are all public and abstract. No Interface methods can be implemented in the Interface.
+Interface variables are all public, static, and final.
+Variables declared in a Java interface are final (by default). An abstract class may contain non-final variables.
+Members of a Java interface are public by default. A Java abstract class can have the usual flavors of class members .. private, protected, etc..
+Like a Java Class, a Java interface can extend another Java interface, 
+A Java class can implement multiple interfaces but it can extend only one abstract class
+An Abstract class has constructors, even if they are not declared or implemented in the Abstract Class. Inerfaces have no constructors.
+
+
+Q: Where would you choose  to use an Interface or  Abstract class?
+A: Example:
+
+public interface LoginAuth{
+   public String encryptPassword(String pass);
+   public void checkDBforUser();
+}
+
+/*
+ * Now suppose you have 3 databases used by your enterprise applications. 
+ * Then each and every implementation for those database needs to define the 2 methods in the interface: 
+ */
+public class DBMySQL implements LoginAuth{
+          // Needs to implement both methods
+	public String encryptPassword(String pass) {
+		// encode & encrypt method
+	}
+	public void checkDBforUser() {
+		// build  SQL or call Stored procedure
+	}
+}
+public class DBOracle implements LoginAuth{
+          // Needs to implement both methods
+	public String encryptPassword(String pass) {
+		// encode & encrypt method
+	}
+	public void checkDBforUser() {
+		// build  SQL or call Stored procedure
+	}
+}
+public class DBAbc implements LoginAuth{
+          // Needs to implement both methods
+	public String encryptPassword(String pass) {
+		// encode & encrypt method
+	}
+	public void checkDBforUser() {
+		// build  SQL or call Stored procedure
+	}
+}
+
+// if encryptPassword() is not database dependent, and it's the same for each class, then
+// a single method implemented in an abstract 'parent' class will br sufficient.
+//
+public abstract class LoginAuth{
+   public String encryptPassword(String pass){
+            // Implement the same default behavior here 
+            // that is shared by all subclasses.
+   }
+   // Each subclass needs to provide their own implementation of this abstract method:
+   public abstract void checkDBforUser();
+}
+public class DBMySQL extends LoginAuth{
+	public void checkDBforUser(String userID) {
+		// build  SQL or call Stored procedure
+	}
+}
+public class DBOracle extends LoginAuth{
+	public void checkDBforUser(String userID) {
+		// build  SQL or call Stored procedure
+	}
+}
+public class DBAbc extends LoginAuth{
+	public void checkDBforUser(String userID) {
+		// build  SQL or call Stored procedure
+	}
+}
+
+Another example:
+------------------------------
+public interface Payment [
+    void recordPayment();      //by default it is a abstract method
+}
+
+
+public class PayPal implements Payment {
+    public void recordPayment() {
+        //some logic for paypal payment
+        //e.g. get, use Paypal username and password for payment
+    }
+}
+
+public class CreditCard implements Payment {
+    public void recordPayment() {
+        //some logic for CreditCard payment
+        //e.g.get CreditCard number, date of expiry etc...
+    }
+}
+public class MoneyOrder implements Payment {
+    public void recordPayment() {
+        //some logic for Money Order payment
+        //e.g. put order on HOLD until Money Order  clears
+    }
+}
+
+// regardless of  how a paymment is  recorded, 
+// the product or  service delivery might be best handled by implementations of an Abstract Class
+public abstract class ManageInventory {
+    public void generate order();
+    public void updateInventory();
+    public void itemsToBuyer();
+}
+public class ProductDelivery extends ManageInventory {
+    public void generate order() { /* generate paperwork for  the order */ }
+    public void updateInventory() { /* take items from inventory for shipment */}
+    public void itemsToBuyer() { /* ship  goods */ }
+}
+public class ServiceDelivery extends ManageInventory {
+    public void generate order() { /* generate paperwork for  the order */ }
+    public void updateInventory() { /* assign staff, etc. */}
+    public void itemsToBuyer() { /*  provide the services */ }
+}
+
+
+-----------------------------------------------
+CLASS MODIFIERS:	public, abstract, final
+VARIABLE MODIFIERS:	public, protected, private, static, final, volatile, transient
+CONSTRUCTOR MODIFIERS:	public, protected, private
+METHOD MODIFIERS:	public, protected, private, static, final, abstract, native, synchronized
+
+
+CLASSPATH variable:
+===================
+the ClassPath is how the Java compiler 'finds' classes to compile and builds packages.
+A CLASSPATH specifies the 'root' for classes you want to manage and use for application packages
+
+example:
+CLASSPATH = C:\JavaClasses\
+package  path 				import statement in *.java files
+-------------				--------------------------------
+C:\JavaClasses\nonVisual\utils\		import nonVisual.utils.*; // for ALL items in ..\utils\
+C:\JavaClasses\dataBase\Access\		import dataBase.Access.*; // for ALL items in ..\Access\
+
+Java ARchive (JAR) Files:
+=========================
+jar [options] jar_File [manifest_File] class-file1, class_file2, ...
+jar command-line options:
+  c	Create a new jar file
+  u	update an existing jar file
+  x	Extracts files from an existing jar file
+  t	List the contents of a jar file
+  f	Indicates that the jar-file is specified as an option (almost always use this option)
+  v	Verbose  output - display details of each action
+  0	No file-compression when adding to an archive (0% compression)
+  m	Specifies that a manifest_file is provided (next argument, fllowing the jar_file name)
+  M	Specifies that a manifest_file should not be added to the archive (rarely used).
+
