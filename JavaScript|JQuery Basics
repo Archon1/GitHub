@@ -1,0 +1,204 @@
+Enter file contents here// JQUERY Basics
+
+JQUERY BASIC SELECTORS:
+-----------------------
+ *		All elements
+ elementName	All elements with that element name
+ #id		All elements with that id attribute.value
+ .class		All elements with that class attribute.value
+ selector1, selector2,...	Elements that match more than 1 selector 
+				See also .add() method -- more efficient when combining selections
+
+JQUERY HIERARCHY:
+-----------------
+ancestor descendant	An element that is a descendant of another element (e.g. <li>, <a>)
+parent > child		An element that is a direct child of another element 
+                        (you can use * in place of child specifications, to select ALL children of a spedified parent)
+previous + next		Adjacent sibling selector; only selects elements that are immediately followed by the 'previous' element
+previous ~ siblings	The sibling selector will select any elements that are a sibling of the 'previous' element
+
+
+BASIC JQUERY FILTERS:
+---------------------
+:not(selector)		All elements except the one in the selector. e.g.;  div:not('#summary')
+:first			The first element from the selection
+:last			The last element from the selection
+:even			The elements with even index-numbers in the selection
+:odd			The elements with odd index-numbers in the selection
+:eq(index)		Element(s) with index numbers Equal To (index)
+:gt(index)		Element(s) with index numbers Greater Than (index)
+:lt(index)		Element(s) with index numbers Less Than (index)
+:header			All header (<H1> ... <H6>) elements
+:animated		Elements that are currently being animated
+:focus			The element which currently has Focus
+
+JQUERY CONTENT FILTERS:
+-----------------------
+:contains('text')	All elements that contain the specified text as a parameter
+:empty			All elements that have no children
+:parent			All elements tht have a child node (can be text or element)
+:has(selector)		Elements that contain at least 1 element tht matches the selector
+			e.g.  div:has(p)  matches all <div> elements containing a <p> element
+
+
+JQUERY VISIBILITY FILTERS:
+--------------------------
+:hidden			All elements that are hidden
+:visible		All elements that contain space in the layout of the page
+			not selected if -- display:none;, height|width:0;, ancestor is hedden.
+			selected if-- visibility:hidden; opacity:0; because they would take up space in a page-layout
+
+JQUERY CHILD FILTERS:
+---------------------
+:nth-child(expression)	not zero-based (example:  ul li:nth-child(2) )
+:first-child		First child in the current selection
+:last-child		Last child in the current selection
+:only-child		Where therre is only one child of the element (example: div p:only-child )
+
+JQUERY ATTRIBUTE FILTERS:
+-------------------------
+[attribute]		Elements that have this attribute (any value)
+[attribute='value']	Elements that have this attribute with the specified value
+[attribute!='value']	Elements that have this attribute with any value except the specified value
+[attribute^='value']	The attribute.value begins with this value
+[attribute*='value']	The attribute.balue contains this value
+[attribute|='value']	Eqaual  to a given strin, or starting with a string, followed by a hyphen
+[attribute~='value']	The attribute.value should be one of the values in a spece-separated list
+[attribute?='value']	The attribute.value ends with this value
+[attribute][attribute2]	Elements that match all of the selectors
+
+JQUERY FORM ELEMENT SELECTORS:
+------------------------------
+:input		All input elements
+:text		All text inputs
+:password	All password inputs
+:radio		All radio-buttons
+:checkbox	All checkboxes
+:submit		All submit buttons
+:image		All <img > elements
+:reset		All reset buttons
+:button		All <button > elements
+:file		All file inputs
+:selected	All selected inputs from Drop-Down lists
+:enabled	All Enabled form elements (default for all form elements)
+:disabled	All disabled form elements (feature the CSS disabled property)
+:checked	All checked radio-buttons and/or checkboxes
+
+
+JQUERY CONTENT FILTERS:
+========================
+JQuery GET/CHANGE CONTENT:
+--------------------------
+.html()		
+.text()
+.replaceWith()
+.remove()
+
+JQuery ELEMENTS:
+----------------
+.before()
+.after()
+.prepand()
+.append()
+.remove()
+.clone()
+.unwrap()
+.detach()
+.empty()
+.add()
+
+
+JQuery ATTRIBUTES:
+------------------
+.attr()
+.removeAttr()
+.addClass()
+.removeClass()
+.css()
+
+JQuery FORM VALUES:
+-------------------
+.val()
+.isNumeric()
+
+JQUERY - FINDING ELEMENTS:
+==========================
+
+GENERAL JQuery FIND METHODS:
+----------------------------
+.find()
+.closest()
+.parent()
+.parents()
+.children()
+.siblings()
+.next()
+.nextAll()
+.prev()
+.prevAll()
+
+JQuery FILTER/TEST:
+-------------------
+.filter()
+.not()
+.has()
+.is()
+:contains()
+
+JQuery ORDER IN SELECTION:
+--------------------------
+.eq()
+.lt()
+.gt()
+
+
+JQuery DIMENSIONS:
+------------------
+.height()
+.innerHeight()
+.outerHeight()
+.outerHeight(TRUE)
+.width()
+.innerWidth()
+.outerWidth()
+.outerWidth(TRUE)
+$(document).height()
+$(document).width()(
+$(window).height()
+$(window).width()
+
+JQuery POSITIONS:
+-----------------
+.offset()
+.position()
+.scrollLeft()
+.scrollTop()
+
+JQuery EFFECTS & ANIMATION:
+---------------------------
+.show()
+.hide()
+.toggle()
+
+.fadeIn()
+.fadeOut()
+.fadeTo()
+.fadeToggle()
+
+.slideDown()
+.slideUp()
+.slideToggle()
+
+.delay()
+.stop()
+.animate()
+
+JQuery EVENTS:
+--------------
+* Document/File events
+  .ready()
+  .load()
+
+* User interaction Events
+  .on()
+  NOTE: .on('click') replaces .click(). Similar for .hover(), .submit() and other user-generated events
