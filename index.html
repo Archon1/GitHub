@@ -1034,6 +1034,239 @@ jar command-line options:
   0 No file-compression when adding to an archive (0% compression)
   m Specifies that a manifest_file is provided (next argument, fllowing the jar_file name)
   M Specifies that a manifest_file should not be added to the archive (rarely used).</p>
+
+<p>++++++++++++++++++++++++++++++++++++++
+JQuery
+++++++++++++++++++++++++++++++++++++++
+// JQUERY Basics</p>
+
+<h2>
+<a id="jquery-basic-selectors" class="anchor" href="#jquery-basic-selectors" aria-hidden="true"><span class="octicon octicon-link"></span></a>JQUERY BASIC SELECTORS:</h2>
+
+<ul>
+<li>     All elements
+elementName    All elements with that element name
+#id        All elements with that id attribute.value
+.class     All elements with that class attribute.value
+selector1, selector2,...   Elements that match more than 1 selector 
+              See also .add() method -- more efficient when combining selections</li>
+</ul>
+
+<h2>
+<a id="jquery-hierarchy" class="anchor" href="#jquery-hierarchy" aria-hidden="true"><span class="octicon octicon-link"></span></a>JQUERY HIERARCHY:</h2>
+
+<p>ancestor descendant An element that is a descendant of another element (e.g. </p>, <a>)
+parent &gt; child      An element that is a direct child of another element 
+                        (you can use * in place of child specifications, to select ALL children of a spedified parent)
+previous + next     Adjacent sibling selector; only selects elements that are immediately followed by the 'previous' element
+previous ~ siblings The sibling selector will select any elements that are a sibling of the 'previous' element
+
+<h2>
+<a id="basic-jquery-filters" class="anchor" href="#basic-jquery-filters" aria-hidden="true"><span class="octicon octicon-link"></span></a>BASIC JQUERY FILTERS:</h2>
+
+<p>:not(selector)      All elements except the one in the selector. e.g.;  div:not('#summary')
+:first          The first element from the selection
+:last           The last element from the selection
+:even           The elements with even index-numbers in the selection
+:odd            The elements with odd index-numbers in the selection
+:eq(index)      Element(s) with index numbers Equal To (index)
+:gt(index)      Element(s) with index numbers Greater Than (index)
+:lt(index)      Element(s) with index numbers Less Than (index)
+:header         All header (</p>
+<h1>
+<a id="---elementsanimated-------elements-that-are-currently-being-animatedfocus----------the-element-which-currently-has-focusjquery-content-filters" class="anchor" href="#---elementsanimated-------elements-that-are-currently-being-animatedfocus----------the-element-which-currently-has-focusjquery-content-filters" aria-hidden="true"><span class="octicon octicon-link"></span></a> ... <h6>
+<a id="-elementsanimated-------elements-that-are-currently-being-animatedfocus----------the-element-which-currently-has-focusjquery-content-filters" class="anchor" href="#-elementsanimated-------elements-that-are-currently-being-animatedfocus----------the-element-which-currently-has-focusjquery-content-filters" aria-hidden="true"><span class="octicon octicon-link"></span></a>) elements
+:animated       Elements that are currently being animated
+:focus          The element which currently has Focus
+
+<h2>
+<a id="jquery-content-filters" class="anchor" href="#jquery-content-filters" aria-hidden="true"><span class="octicon octicon-link"></span></a>JQUERY CONTENT FILTERS:</h2>
+
+</h6>
+</h1>
+<p>:contains('text')   All elements that contain the specified text as a parameter
+:empty          All elements that have no children
+:parent         All elements tht have a child node (can be text or element)
+:has(selector)      Elements that contain at least 1 element tht matches the selector
+            e.g.  div:has(p)  matches all </p>
+<div> elements containing a <p> element</p>
+
+<h2>
+<a id="jquery-visibility-filters" class="anchor" href="#jquery-visibility-filters" aria-hidden="true"><span class="octicon octicon-link"></span></a>JQUERY VISIBILITY FILTERS:</h2>
+
+<p>:hidden         All elements that are hidden
+:visible        All elements that contain space in the layout of the page
+            not selected if -- display:none;, height|width:0;, ancestor is hedden.
+            selected if-- visibility:hidden; opacity:0; because they would take up space in a page-layout</p>
+
+<h2>
+<a id="jquery-child-filters" class="anchor" href="#jquery-child-filters" aria-hidden="true"><span class="octicon octicon-link"></span></a>JQUERY CHILD FILTERS:</h2>
+
+<p>:nth-child(expression)  not zero-based (example:  ul li:nth-child(2) )
+:first-child        First child in the current selection
+:last-child     Last child in the current selection
+:only-child     Where therre is only one child of the element (example: div p:only-child )</p>
+
+<h2>
+<a id="jquery-attribute-filters" class="anchor" href="#jquery-attribute-filters" aria-hidden="true"><span class="octicon octicon-link"></span></a>JQUERY ATTRIBUTE FILTERS:</h2>
+
+<p>[attribute]     Elements that have this attribute (any value)
+[attribute='value'] Elements that have this attribute with the specified value
+[attribute!='value']    Elements that have this attribute with any value except the specified value
+[attribute^='value']    The attribute.value begins with this value
+[attribute*='value']    The attribute.balue contains this value
+[attribute|='value']    Eqaual  to a given strin, or starting with a string, followed by a hyphen
+[attribute~='value']    The attribute.value should be one of the values in a spece-separated list
+[attribute?='value']    The attribute.value ends with this value
+[attribute][attribute2] Elements that match all of the selectors</p>
+
+<h2>
+<a id="jquery-form-element-selectors" class="anchor" href="#jquery-form-element-selectors" aria-hidden="true"><span class="octicon octicon-link"></span></a>JQUERY FORM ELEMENT SELECTORS:</h2>
+
+<p>:input      All input elements
+:text       All text inputs
+:password   All password inputs
+:radio      All radio-buttons
+:checkbox   All checkboxes
+:submit     All submit buttons
+:image      All <img> elements
+:reset      All reset buttons
+:button     All  elements
+:file       All file inputs
+:selected   All selected inputs from Drop-Down lists
+:enabled    All Enabled form elements (default for all form elements)
+:disabled   All disabled form elements (feature the CSS disabled property)
+:checked    All checked radio-buttons and/or checkboxes</p>
+
+<h1>
+<a id="jquery-content-filters-1" class="anchor" href="#jquery-content-filters-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>JQUERY CONTENT FILTERS:</h1>
+
+<h2>
+<a id="jquery-getchange-content" class="anchor" href="#jquery-getchange-content" aria-hidden="true"><span class="octicon octicon-link"></span></a>JQuery GET/CHANGE CONTENT:</h2>
+
+<p>.html()<br>
+.text()
+.replaceWith()
+.remove()</p>
+
+<h2>
+<a id="jquery-elements" class="anchor" href="#jquery-elements" aria-hidden="true"><span class="octicon octicon-link"></span></a>JQuery ELEMENTS:</h2>
+
+<p>.before()
+.after()
+.prepand()
+.append()
+.remove()
+.clone()
+.unwrap()
+.detach()
+.empty()
+.add()</p>
+
+<h2>
+<a id="jquery-attributes" class="anchor" href="#jquery-attributes" aria-hidden="true"><span class="octicon octicon-link"></span></a>JQuery ATTRIBUTES:</h2>
+
+<p>.attr()
+.removeAttr()
+.addClass()
+.removeClass()
+.css()</p>
+
+<h2>
+<a id="jquery-form-values" class="anchor" href="#jquery-form-values" aria-hidden="true"><span class="octicon octicon-link"></span></a>JQuery FORM VALUES:</h2>
+
+<p>.val()
+.isNumeric()</p>
+
+<h1>
+<a id="jquery---finding-elements" class="anchor" href="#jquery---finding-elements" aria-hidden="true"><span class="octicon octicon-link"></span></a>JQUERY - FINDING ELEMENTS:</h1>
+
+<h2>
+<a id="general-jquery-find-methods" class="anchor" href="#general-jquery-find-methods" aria-hidden="true"><span class="octicon octicon-link"></span></a>GENERAL JQuery FIND METHODS:</h2>
+
+<p>.find()
+.closest()
+.parent()
+.parents()
+.children()
+.siblings()
+.next()
+.nextAll()
+.prev()
+.prevAll()</p>
+
+<h2>
+<a id="jquery-filtertest" class="anchor" href="#jquery-filtertest" aria-hidden="true"><span class="octicon octicon-link"></span></a>JQuery FILTER/TEST:</h2>
+
+<p>.filter()
+.not()
+.has()
+.is()
+:contains()</p>
+
+<h2>
+<a id="jquery-order-in-selection" class="anchor" href="#jquery-order-in-selection" aria-hidden="true"><span class="octicon octicon-link"></span></a>JQuery ORDER IN SELECTION:</h2>
+
+<p>.eq()
+.lt()
+.gt()</p>
+
+<h2>
+<a id="jquery-dimensions" class="anchor" href="#jquery-dimensions" aria-hidden="true"><span class="octicon octicon-link"></span></a>JQuery DIMENSIONS:</h2>
+
+<p>.height()
+.innerHeight()
+.outerHeight()
+.outerHeight(TRUE)
+.width()
+.innerWidth()
+.outerWidth()
+.outerWidth(TRUE)
+$(document).height()
+$(document).width()(
+$(window).height()
+$(window).width()</p>
+
+<h2>
+<a id="jquery-positions" class="anchor" href="#jquery-positions" aria-hidden="true"><span class="octicon octicon-link"></span></a>JQuery POSITIONS:</h2>
+
+<p>.offset()
+.position()
+.scrollLeft()
+.scrollTop()</p>
+
+<h2>
+<a id="jquery-effects--animation" class="anchor" href="#jquery-effects--animation" aria-hidden="true"><span class="octicon octicon-link"></span></a>JQuery EFFECTS &amp; ANIMATION:</h2>
+
+<p>.show()
+.hide()
+.toggle()</p>
+
+<p>.fadeIn()
+.fadeOut()
+.fadeTo()
+.fadeToggle()</p>
+
+<p>.slideDown()
+.slideUp()
+.slideToggle()</p>
+
+<p>.delay()
+.stop()
+.animate()</p>
+
+<h2>
+<a id="jquery-events" class="anchor" href="#jquery-events" aria-hidden="true"><span class="octicon octicon-link"></span></a>JQuery EVENTS:</h2>
+
+<ul>
+<li><p>Document/File events
+.ready()
+.load()</p></li>
+<li><p>User interaction Events
+.on()
+NOTE: .on('click') replaces .click(). Similar for .hover(), .submit() and other user-generated events</p></li>
+</ul>
+</div></a>
       </section>
     </div>
 
